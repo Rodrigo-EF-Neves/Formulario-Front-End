@@ -11,6 +11,27 @@ const mascaraTelefone = (value) => {
     return value;
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+    const dataNascInput = document.getElementById("id_datanasc");
+    dataNascInput.addEventListener("blur", validaDataNascimento);
+});
+
+function validaDataNascimento() {
+    const dataNascInput = document.getElementById("id_datanasc");
+    const dataNascimento = new Date(dataNascInput.value);
+    const hoje = new Date();
+    const idade = Math.floor((hoje - dataNascimento) / (365.25 * 24 * 60 * 60 * 1000));
+    if(idade < 18) { 
+        Swal.fire({
+            icon: 'error',
+            title: 'Erro',
+            text: 'Você deve ter ao menos 18 anos para se cadastrar.',
+            })
+            dataNascInput.value = ""; 
+            dataNascInput.focus();
+    }
+}
+
 const handleCpf = (event) => {
     let input = event.target;
     input.value = mascaraCpf(input.value);
@@ -46,20 +67,13 @@ function preencheEndereco() {
       .catch(error => console.error(error));
   }
 
-  function validaSenha() {
-    const senha = document.getElementById("id_senha");
-    if(senha.value === null) {
+  function validaTamanhoSenha() {
+    const senha = document.getElementById("id_senha").value;
+    if(senha.length < 6) {
         Swal.fire({
             icon: 'error',
             title: 'Erro',
-            text: 'A senha está vazia!',
-          })
-        return;
-    } else if(senha.length < 6) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Erro',
-            text: 'A senha deve ter 6 caracteres!',
+            text: 'A senha deve conter pelo menos 6 caracteres!',
           })
           return;
     }
@@ -68,4 +82,21 @@ function preencheEndereco() {
   function validaSenhasIguais() {
     const senha = document.getElementById("id_senha").value;
     const repsenha = document.getElementById("id_repsenha").value;
+    if (repsenha.length >= 6) {
+        if(senha !== repsenha) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro',
+                text: 'As senhas devem ser iguais!',
+              })
+              return;
+        }
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Erro',
+            text: 'A senha deve conter pelo menos 6 caracteres!',
+          })
+          return;
+    }
   }

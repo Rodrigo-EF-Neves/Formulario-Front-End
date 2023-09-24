@@ -17,7 +17,7 @@ form {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #d6d6d6b6;
+    background: linear-gradient(#c6e8fcb6, #f7d4f8c4, #ffde96b2);
 }
 
 .container_info_pessoal {
@@ -32,7 +32,7 @@ form {
     align-items: center;
     flex-wrap: wrap;
     padding: 50px 30px;
-    background-color: #f5f5dc;
+    background-color: #cccccca6;
     border-radius: 20px;
 }
 
