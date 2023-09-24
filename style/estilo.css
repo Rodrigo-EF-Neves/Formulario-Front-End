@@ -42,3 +42,9 @@ form {
 .label_endereco {
     margin: 20px 10px;
 }
+
+.container_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
