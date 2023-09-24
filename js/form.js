@@ -57,12 +57,10 @@ function preencheEndereco() {
         document.getElementById('id_estado').value = data.uf;
         document.getElementById('id_logradouro').value = data.logradouro;
         document.getElementById('id_bairro').value = data.bairro;
-        document.getElementById('id_complemento').value = data.complemento;
         document.getElementById('id_cidade').readonly = true;
         document.getElementById('id_estado').readonly = true;
         document.getElementById('id_logradouro').readonly = true;
         document.getElementById('id_bairro').readonly = true;
-        document.getElementById('id_complemento').readonly = true;
       })
       .catch(error => console.error(error));
   }
