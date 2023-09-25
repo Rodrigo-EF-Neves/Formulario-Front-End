@@ -21,9 +21,9 @@
                 <label class="form-label my-2" for="id_datanasc">Data de nascimento</label>
                 <input class="form-control" type="date" name="datanasc" id="id_datanasc" required onblur="validaDataNascimento()">
                 <label class="form-label my-2" for="id_telefone">Telefone</label>
-                <input class="form-control" type="tel" name="telefone" id="id_telefone" maxlength="15" minlength="14" placeholder="(XX) XXXXX-XXXX" required onkeyup="handlePhone(event)">
+                <input class="form-control" type="tel" name="telefone" id="id_telefone" maxlength="11" minlength="14" placeholder="(XX) XXXXX-XXXX" required onkeyup="handlePhone(event)">
                 <label class="form-label my-2" for="id_cpf">CPF</label>
-                <input class="form-control" type="text" name="cpf" id="id_cpf" maxlength="14" placeholder="Insira seu CPF" required onkeyup="handleCpf(event)">
+                <input class="form-control" type="text" name="cpf" id="id_cpf" maxlength="11" placeholder="Insira seu CPF" required onkeyup="handleCpf(event)">
                 <label class="form-label my-2" for="id_cep">CEP</label>
                 <input class="form-control" type="text" name="cep" id="id_cep" placeholder="Insira seu CEP" maxlength="8" required onkeyup="preencheEndereco()">
             </div>
